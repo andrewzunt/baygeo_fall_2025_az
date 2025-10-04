@@ -52,4 +52,10 @@ onMounted(() => {
 .map {
   height: 100%;
 }
+
+/* Used to hide before page loads */
+.hidden {
+  display: none;
+}
+
 </style>
