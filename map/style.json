@@ -12,6 +12,10 @@
     "openmaptiles": {
       "type": "vector",
       "url": "https://tiles.openfreemap.org/planet"
+    },
+    "neighborhoods": {
+      "type": "geojson",
+      "data": {}
     }
   },
   "sprite": "https://tiles.openfreemap.org/sprites/ofm_f384/ofm",
@@ -5961,6 +5965,37 @@
         "text-halo-blur": 1,
         "text-halo-color": "#fff",
         "text-halo-width": 1
+      }
+    },
+    {
+      "id": "neighborhoods-outline",
+      "type": "line",
+      "source": "neighborhoods",
+      "paint": {
+        "line-color": "black"
+      }
+    },
+    {
+      "id": "neighborhoods-fill",
+      "type": "fill-extrusion",
+      "source": "neighborhoods",
+      "paint": {
+        "fill-extrusion-color": [
+          "step",
+          ["get", "sitesCount"],
+          "rgb(255,255,178)",
+          50, "rgb(254,217,118)",
+          100, "rgb(254,178,76)",
+          300, "rgb(253,141,60)",
+          600, "rgb(240,59,32)",
+          1000, "rgb(189,0,38)"
+        ],
+        "fill-extrusion-height": [
+          "*",
+          ["get", "sitesCount"],
+          5
+        ],
+        "fill-extrusion-opacity": 0.7
       }
     }
   ]
